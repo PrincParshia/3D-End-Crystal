@@ -10,11 +10,10 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import static princ.tdendcrystal.client.Constants.ModelLayers.END_CRYSTAL;
 
 @Mod(value = Constants.NAMESPACE, dist = Dist.CLIENT)
-public class NeoForgeCMI {
+public class TDEndCrystal {
 
-    public NeoForgeCMI(IEventBus eventBus) {
-        TDEndCrystal.init();
-        eventBus.addListener(NeoForgeCMI::onRegisterLayerDefinition);
+    public TDEndCrystal(IEventBus eventBus) {
+        eventBus.addListener(TDEndCrystal::onRegisterLayerDefinition);
     }
 
     @SubscribeEvent

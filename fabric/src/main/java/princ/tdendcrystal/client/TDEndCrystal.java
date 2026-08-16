@@ -6,11 +6,10 @@ import net.minecraft.client.model.object.crystal.EndCrystalModel;
 
 import static princ.tdendcrystal.client.Constants.ModelLayers.END_CRYSTAL;
 
-public class FabricCMI implements ClientModInitializer {
+public class TDEndCrystal implements ClientModInitializer {
     
     @Override
     public void onInitializeClient() {
-        TDEndCrystal.init();
         this.registerModelLayers();
     }
 

@@ -15,18 +15,26 @@
     "environment": "client",
     "entrypoints": {
         "client": [
-            "princ.tdendcrystal.client.FabricCMI"
+            "princ.tdendcrystal.client.TDEndCrystal"
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json",
-        "${mod_id}.fabric.mixins.json"
+        "${mod_id}.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",
         "fabric-api": "*",
         "minecraft": ">=${minecraft_version_min} <=${minecraft_version_max}",
         "java": ">=${java_version}"
+    },
+    "custom": {
+        "modmenu": {
+            "links": {
+                "modmenu.modrinth": "https://modrinth.com/mod/td-end-crystal",
+                "modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/td-end-crystal",
+                "modmenu.kofi": "https://ko-fi.com/princparshia"
+            }
+        }
     }
 }
   

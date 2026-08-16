@@ -48,7 +48,7 @@ public class EndCrystalSpecialRenderer implements SpecialModelRenderer<EndCrysta
         poseStack.pushPose();
         this.setupAnim(state);
         poseStack.translate(0.5, -1, 0.5);
-        submitNodeCollector.submitModelPart(model.root(), poseStack, model.renderType(TEXTURE), lightCoords, overlayCoords, null, false, hasFoil, -1, null, outlineColor);
+        submitNodeCollector.submitModelPart(this.model.root(), poseStack, this.model.renderType(TEXTURE), lightCoords, overlayCoords, null);
         poseStack.popPose();
     }
 
@@ -64,7 +64,7 @@ public class EndCrystalSpecialRenderer implements SpecialModelRenderer<EndCrysta
     @Override
     public void getExtents(Consumer<Vector3fc> output) {
         PoseStack poseStack = new PoseStack();
-        model.root().getExtentsForGui(poseStack, output);
+        this.model.root().getExtentsForGui(poseStack, output);
     }
 
     public record Unbaked() implements SpecialModelRenderer.Unbaked<EndCrystalRenderState> {
