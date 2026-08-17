@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.entity.state.EndCrystalRenderState;
 import net.minecraft.client.renderer.special.SpecialModelRenderer;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Quaternionf;
 import org.joml.Vector3fc;
@@ -44,7 +45,7 @@ public class EndCrystalSpecialRenderer implements SpecialModelRenderer<EndCrysta
     }
 
     @Override
-    public void submit(EndCrystalRenderState state, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int lightCoords, int overlayCoords, boolean hasFoil, final int outlineColor) {
+    public void submit(EndCrystalRenderState state, ItemDisplayContext context, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int lightCoords, int overlayCoords, boolean hasFoil, final int outlineColor) {
         poseStack.pushPose();
         this.setupAnim(state);
         poseStack.translate(0.5, -1, 0.5);
@@ -67,7 +68,7 @@ public class EndCrystalSpecialRenderer implements SpecialModelRenderer<EndCrysta
         this.model.root().getExtentsForGui(poseStack, output);
     }
 
-    public record Unbaked() implements SpecialModelRenderer.Unbaked<EndCrystalRenderState> {
+    public record Unbaked() implements SpecialModelRenderer.Unbaked {
         public static final MapCodec<Unbaked> MAP_CODEC = MapCodec.unit(new Unbaked());
 
         @Override

@@ -19,7 +19,7 @@ import static princ.tdendcrystal.client.Constants.withDefaultNamespace;
 public class SpecialModelRenderersMixin {
     @Shadow
     @Final
-    private static ExtraCodecs.LateBoundIdMapper<Identifier, MapCodec<? extends SpecialModelRenderer.Unbaked<?>>> ID_MAPPER;
+    private static ExtraCodecs.LateBoundIdMapper<Identifier, MapCodec<? extends SpecialModelRenderer.Unbaked>> ID_MAPPER;
 
     @Inject(method = "bootstrap", at = @At("HEAD"))
     private static void bootstrap(CallbackInfo callbackInfo) {
