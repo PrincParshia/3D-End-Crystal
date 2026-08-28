@@ -1,11 +1,11 @@
 package princ.tdendcrystal.client;
 
-import net.minecraft.client.model.object.crystal.EndCrystalModel;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import princ.tdendcrystal.client.model.EndCrystalModel;
 
 import static princ.tdendcrystal.client.Constants.ModelLayers.END_CRYSTAL;
 

@@ -1,0 +1,23 @@
+{
+    "parent": "minecraft:builtin/entity",
+    "textures": {
+        "particle": "minecraft:item/end_crystal"
+    },
+    "display": {
+        "thirdperson_righthand": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 2.5, 1 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 2, 0 ],
+            "scale":[ 0.5, 0.5, 0.5 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 13, 0 ],
+            "scale":[ 1, 1, 1 ]
+        }
+    }
+}
