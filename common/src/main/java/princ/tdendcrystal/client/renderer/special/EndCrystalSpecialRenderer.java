@@ -29,7 +29,7 @@ public class EndCrystalSpecialRenderer implements SpecialModelRenderer<EndCrysta
     }
 
     @Override
-    public EndCrystalRenderState extractArgument(ItemStack stack) {
+    public EndCrystalRenderState extractArgument(ItemStack itemStack) {
         EndCrystalRenderState state = new EndCrystalRenderState();
         state.showsBottom = false;
         state.beamOffset = null;
@@ -45,9 +45,9 @@ public class EndCrystalSpecialRenderer implements SpecialModelRenderer<EndCrysta
     }
 
     @Override
-    public void submit(EndCrystalRenderState state, ItemDisplayContext context, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int lightCoords, int overlayCoords, boolean hasFoil, final int outlineColor) {
+    public void submit(EndCrystalRenderState endCrystalRenderState, ItemDisplayContext displayContext, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int lightCoords, int overlayCoords, boolean hasFoil, final int outlineColor) {
         poseStack.pushPose();
-        this.setupAnim(state);
+        this.setupAnim(endCrystalRenderState);
         poseStack.translate(0.5, -1, 0.5);
         submitNodeCollector.submitModelPart(this.model.root(), poseStack, this.model.renderType(TEXTURE), lightCoords, overlayCoords, null);
         poseStack.popPose();
