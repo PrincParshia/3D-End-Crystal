@@ -28,7 +28,7 @@ public class EndCrystalSpecialRenderer implements SpecialModelRenderer<EndCrysta
     }
 
     @Override
-    public EndCrystalRenderState extractArgument(ItemStack stack) {
+    public EndCrystalRenderState extractArgument(ItemStack itemStack) {
         EndCrystalRenderState state = new EndCrystalRenderState();
         state.showsBottom = false;
         state.beamOffset = null;
@@ -44,18 +44,18 @@ public class EndCrystalSpecialRenderer implements SpecialModelRenderer<EndCrysta
     }
 
     @Override
-    public void submit(EndCrystalRenderState state, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int lightCoords, int overlayCoords, boolean hasFoil, final int outlineColor) {
+    public void submit(EndCrystalRenderState endCrystalRenderState, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int lightCoords, int overlayCoords, boolean hasFoil, final int outlineColor) {
         poseStack.pushPose();
-        this.setupAnim(state);
+        this.setupAnim(endCrystalRenderState);
         poseStack.translate(0.5, -1, 0.5);
         submitNodeCollector.submitModelPart(this.model.root(), poseStack, this.model.renderType(TEXTURE), lightCoords, overlayCoords, null);
         poseStack.popPose();
     }
 
-    public void setupAnim(EndCrystalRenderState state) {
+    public void setupAnim(EndCrystalRenderState endCrystalRenderState) {
         this.model.resetPose();
         this.model.base.visible = false;
-        float animationSpeed = state.ageInTicks * 3.0F;
+        float animationSpeed = endCrystalRenderState.ageInTicks * 3.0F;
         this.model.outerGlass.rotateBy(Axis.YP.rotationDegrees(animationSpeed).rotateAxis(((float) Math.PI / 3F), SIN_45, 0.0F, SIN_45));
         this.model.innerGlass.rotateBy((new Quaternionf()).setAngleAxis(((float) Math.PI / 3F), SIN_45, 0.0F, SIN_45).rotateY(animationSpeed * ((float) Math.PI / 180F)));
         this.model.cube.rotateBy((new Quaternionf()).setAngleAxis(((float) Math.PI / 3F), SIN_45, 0.0F, SIN_45).rotateY(animationSpeed * ((float) Math.PI / 180F)));
